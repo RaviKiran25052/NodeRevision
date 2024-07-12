@@ -1,0 +1,156 @@
+------------------------------------Day-1----------------------------------------
+
+JavaScript was not always available in all systems, and also different in different systems.
+
+ex: V8 engine (open source)
+
+Node js = V8 + C++
+
+You can run JS outside of the browser
+
+Javascript can talk to native machine because of c++
+
+You can create webservers in JavaScript Language
+
+Node is not a framework nor a library, it is an open-source, cross-platform runtime environment for JavaScript.
+
+Repel - Node js terminal
+
+LTS - long Time Support (stable release), Even number versions
+Beta - Unstable release, Odd number versions
+
+npm - node package manager
+
+
+file system:
+
+in read mode, there are 2 types of operations:
+readFile - return type is void and contains a callback function with parameters - error, result
+
+readFileSync - return type is binary and need to be mention the encoding type.
+
+event loop:
+this loop continuously watches the queue of requests and when the queue is full, then this event loop removes the requests and responds then in FIFO order.
+
+there are two type of requests:
+Blocking (synchronous tasks) and Non-blocking operations (asynchronous tasks)
+
+in Blocking operations, we assign workers/thread, but there are only limited threads i.e., 4.
+
+while using an Non-Blocking operations, the operation will be execute at last, not related to any operating that was mentioned explicitly async.
+
+os.cpus().length, is a method from os module that helps us to know the number of cores available.
+
+------------------------------------Day-2----------------------------------------
+
+to create a server we use an in-built module: "http"
+
+createServer was the method used to create servers that takes request and response objects.
+
+using the http instance, we start the server, by assigning the port to it.
+
+URL:
+
+https://www.ravikiran.dev/
+protocol://domain/path
+
+9380838727 - pnb
+9177747744 - rishi
+9849050621 - charitha
+
+url.parse(req.url, boolean) -> boolean is used to parse or not
+
+url object:
+Url {
+  protocol: null,
+  slashes: null,
+  auth: null,
+  host: null,
+  port: null,
+  hostname: null,
+  hash: null,
+  search: '?name=ravi&age=22',
+  query: [Object: null prototype] { name: 'ravi', age: '22' },
+  pathname: '/contact',
+  path: '/contact?name=ravi&age=22',
+  href: '/contact?name=ravi&age=22'
+}
+
+HTTP methods:
+GET - When you want to get some data from the server,
+POST - When you want to send and mutate some data in server,
+PUT - add the data,
+PATCH - change the data,
+DELETE - delete the data.
+
+Express: it is a framework that's Fast, unopinionated, minimalist web framework for Node.js
+
+Minimalistic: Express doesn’t impose a lot of rules; you have flexibility.
+Routing: Define how your server responds to different URLs (routes).
+Middleware: Easily add functionality (like authentication, logging) to your app.
+View Engines: Integrate with templates for dynamic web pages.
+
+express have in-build modules that are used to require in node.js
+
+Versioning:
+// Version
+4.18.2
+
+1st Part -> 4
+2nd Part -> 18
+3rd Part -> 2
+
+// 3rd (Last Part) - Minor Fixes like capital letters and unused variables (Optional)
+Latest -> 4.18.4
+
+// 2nd Part - Recommended Updates or Bug Fix (Security Fix)
+Latest -> 4.19.1
+
+// 3rd Part - Major Update / Breaking Update
+Lastest -> 5.0.0
+
+If we want to install a particular version we use the command:
+npm install express@4.17.2
+
+version - Must match version exactly
+>version
+>=version
+<version
+<=version
+~version	- install only the minor updated versions.
+^version	- the major version will be locked even for a major update, but it will update the recommended and minor versions.
+1.2.x		- 1.2.O, 1.2.1, etc., but not 1.3.O
+* 		- Matches any version
+https://..	- online repository
+latest		- latest version
+""		- (just an empty string) Same as *
+
+
+RESTfull Api: an API call that follows a set of standard rules.
+
+Rule -1 : Always follow "Server-Client" architecture, where the response can be either in Text, Image, HTML, XML, JSON format. and these response objects are created at server side, which is called as Server Side Rendering (SSR).
+
+Rule -2 : Always respect HTTP methods
+	GET /user instead of /getUser
+	POST /user instead of /postUser
+
+HTML - SSR (Server Side Rendering) - faster
+JSON - CSR (Client Side Rendering) - slower
+
+REST API - JSON
+
+GET /users - HTML Document Render
+GET /api/users - List all users JSON
+
+GET /api/users/1 - Get the user with ID 1
+GET /api/users/2 - Get the user with ID 2
+
+Dynamic Path Parameters
+GET /api/users/:id
+:id -> Variable | Dynamic
+
+POST /api/users - Create new user
+
+PATCH /api/users/1 - Edit the user with ID 1
+
+DELETE /api/users/1 - Delete the User with ID 1
