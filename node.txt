@@ -54,10 +54,6 @@ URL:
 https://www.ravikiran.dev/
 protocol://domain/path
 
-9380838727 - pnb
-9177747744 - rishi
-9849050621 - charitha
-
 url.parse(req.url, boolean) -> boolean is used to parse or not
 
 url object:
